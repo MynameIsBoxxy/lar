@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    /* return view('welcome'); */
+    $data = array('title'=>'Moderna Главная страница','description'=>'Moderna Главная страница');
+     return view('index',$data);
+});
+Route::get('/{page}',function($page){
+    $data = array('title'=>'Moderna '.$page,'description'=>'Moderna '.$page);
+    return view($page,$data);
 });
