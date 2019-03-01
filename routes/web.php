@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 Route::get('/{page}',function($page){
     $data = array('title'=>'Moderna '.$page,'description'=>'Moderna '.$page);
+    $data['breadcrumbs']=Request::Get('breadcrumbs');
     return view($page,$data);
-});
+})->middleware('breadcrumbs');
